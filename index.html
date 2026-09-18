@@ -239,17 +239,6 @@
             }
         );
 
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js")
-            .then(() => {
-                console.log("BoseAI offline mode ready.");
-            })
-            .catch(error => {
-                console.error("Offline mode error:", error);
-            });
-    });
-}
     </script>
 
 </body>
