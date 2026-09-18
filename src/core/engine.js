@@ -1,17 +1,13 @@
 /*
  * BoseAI Local Engine
  * -------------------
- * This file is the local AI engine interface.
- *
- * IMPORTANT:
- * This is the foundation/bridge for the real model.
- * The actual language model will be added next.
+ * Foundation for the offline AI engine.
  */
 
-class BoseAIEngine {
+export class BoseAIEngine {
 
     constructor() {
-        this.ready = true;
+        this.ready = false;
         this.modelLoaded = false;
     }
 
@@ -45,21 +41,13 @@ class BoseAIEngine {
         }
 
         if (text.includes("offline")) {
-            return "Yes. BoseAI is being designed to work locally without an internet connection.";
+            return "Yes. BoseAI is designed to work locally without an internet connection.";
         }
 
-        return "BoseAI local engine received your message. The real language model will be connected next.";
+        if (text.includes("joke")) {
+            return "Why did the computer go offline? Because it wanted some space! 😄";
+        }
+
+        return "BoseAI received your message. The real local language model will be connected next.";
     }
 }
-
-
-/*
- * Make the engine available to the BoseAI website.
- */
-window.BoseAIEngine = BoseAIEngine;
-
-
-/*
- * Create one engine instance.
- */
-window.boseAI = new BoseAIEngine();
