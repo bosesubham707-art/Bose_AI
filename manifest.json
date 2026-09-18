@@ -1,1 +1,11 @@
 
+{
+  "name": "BoseAI",
+  "short_name": "BoseAI",
+  "description": "A local AI assistant designed to run on your device.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "orientation": "portrait"
+}
